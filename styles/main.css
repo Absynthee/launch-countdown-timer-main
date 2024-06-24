@@ -1,0 +1,232 @@
+/* css reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border: 0;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+img,
+picture,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  user-select: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  font-size: inherit;
+}
+
+button p::selection {
+  color: inherit;
+}
+
+p,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.large {
+  display: block;
+}
+
+.small {
+  display: none;
+}
+
+/* css reset end */
+
+/* custom */
+
+:root {
+  --Grayishblue: hsl(237, 18%, 59%);
+  --Softred: hsl(345, 95%, 68%);
+  --White: hsl(0, 0%, 100%);
+  --Darkdesaturatedblue: hsl(236, 21%, 26%);
+  --Darkblue: hsl(235, 16%, 14%);
+  --Darkerblue: hsl(234, 17%, 12%);
+}
+
+/* custom end */
+
+h1 {
+  font-size: 1.5rem;
+  color: var(--White);
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 0.9rem;
+  color: var(--Grayishblue);
+  letter-spacing: 0.35rem;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 3rem;
+}
+
+::selection {
+  color: var(--Softred);
+}
+
+html {
+  display: flex;
+  justify-content: center;
+  font-family: "Red Hat Text", serif;
+  text-align: center;
+  font-weight: 700;
+  background: url(../images/bg-stars.svg) repeat-y center center;
+  background-size: contain;
+  background-color: var(--Darkerblue);
+  color: var(--Softred);
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+header {
+  margin-top: 16.8vh;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 13vh;
+  z-index: 5;
+}
+
+.timer-container {
+  display: flex;
+  width: 800px;
+  padding-inline: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+
+  h2 {
+    margin-top: 92px;
+  }
+}
+
+.days-container,
+.hours-container,
+.minutes-container,
+.seconds-container {
+  width: 25%;
+  min-width: 175px;
+  height: 200px;
+  flex-wrap: wrap;
+  padding-inline: 15px;
+  user-select: none;
+}
+
+.days,
+.hours,
+.minutes,
+.seconds {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  font-size: 5rem;
+  background-color: hsla(236, 21%, 26%, 0.5);
+  height: 70px;
+  padding-top: 15px;
+  width: 100%;
+  border-radius: 10px;
+
+  p {
+    opacity: 0.9;
+    font-size: 5rem;
+  }
+
+  &::after {
+    content: "";
+    display: flex;
+    position: absolute;
+    background-color: hsla(236, 21%, 26%, 0.8);
+    top: 71px;
+    width: 100%;
+    height: 70px;
+    border-radius: 10px;
+    z-index: -1;
+    box-shadow: 0px 8px 0px 0px rgba(0, 0, 0, 0.205);
+  }
+}
+
+footer {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  min-height: 197px;
+  width: 100%;
+  background: url(../images/pattern-hills.svg);
+  background-position: center;
+  background-repeat: repeat-x;
+  background-size: cover;
+}
+
+.icons {
+  display: flex;
+  padding-top: 30px;
+  gap: 33px;
+  margin: auto;
+  cursor: pointer;
+
+  svg path {
+    &:hover {
+      fill: var(--Softred);
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  footer {
+    background-size: contain;
+    /* height: calc(0px + 13.5vw); */
+  }
+}
